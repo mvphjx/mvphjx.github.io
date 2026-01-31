@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jessica 生日快乐</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 冰球主题装饰 -->
+<div class="hockey-stripe stripe-top"></div>
+<div class="hockey-stripe stripe-bottom"></div>
+<div class="hockey-circle circle-1"></div>
+<div class="hockey-circle circle-2"></div>
+
+<div class="container">
+    <!-- 首屏祝福页面 -->
+    <div class="welcome-screen fade-in" id="welcomeScreen">
+        <h1 class="birthday-title">Jessica 生日快乐</h1>
+        <h2 class="birthday-subtitle">天天开心，保持热爱</h2>
+        <div class="hockey-decoration"></div>
+        <span>愿快乐像冰球一样</span>
+        <span>永远在你生活中旋转</span>
+        <button class="lottery-btn" id="startDraw">
+            <i class="fas fa-gift"></i> 点击抽奖
+        </button>
+    </div>
+
+    <!-- 抽奖转盘页面 -->
+    <div class="lottery-screen" id="lotteryScreen">
+        <h2 class="lottery-title">生日大转盘</h2>
+        <p style="color: #0099FF; margin-bottom: 30px; font-size: 1.2rem; text-align: center;">
+            转动转盘，抽取你的生日礼物！</p>
+
+        <div class="turntable-container">
+            <div class="pointer"></div>
+            <div class="turntable" id="turntable">
+                <div class="turntable-item">
+                    <div class="item-content">🎥Vlog神器</div>
+                </div>
+                <div class="turntable-item">
+                    <div class="item-content">🎁泡泡玛特</div>
+                </div>
+                <div class="turntable-item">
+                    <div class="item-content">🧧幸运红包</div>
+                </div>
+                <div class="turntable-item">
+                    <div class="item-content">🪞护肤品</div>
+                </div>
+                <div class="turntable-item">
+                    <div class="item-content">🍽️豪华晚餐</div>
+                </div>
+                <div class="turntable-item">
+                    <div class="item-content">⛽加油卡</div>
+                </div>
+
+                <div class="center-circle">
+                    <span style="color: #003399; font-weight: bold; font-size: 1.2rem;">抽奖</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="draw-btn pulse" id="drawButton" style="margin-top: 40px;">
+            开始抽奖 <i class="fas fa-play hockey-icon"></i>
+        </button>
+
+        <button class="action-btn back-home" id="backHome" style="margin-top: 20px;">
+            返回首页
+        </button>
+    </div>
+
+    <!-- 抽奖结果页面 -->
+    <div class="result-screen" id="resultScreen">
+        <h2 class="result-title">恭喜你抽中了！</h2>
+
+        <img class="gift-image" id="giftImage" src="" alt="礼物图片">
+
+        <h3 class="gift-name" id="giftName">礼物名称</h3>
+
+        <p class="gift-description" id="giftDescription">礼物描述</p>
+
+        <div class="action-buttons">
+            <button class="action-btn draw-again" id="drawAgain">
+                再抽一次
+            </button>
+            <button class="action-btn back-home" id="backHome2">
+                返回首页
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
