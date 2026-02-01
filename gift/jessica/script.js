@@ -1,39 +1,38 @@
 // 礼物数据
 const gifts = [
     {
-        name: "Vlog神器",
-        description: "DJI Pocket 3，记录生活中精彩的每一刻，生日快乐！",
+        name: "大疆 Pocket 3",
+        description: "愿它为你捕捉岁月里的温柔瞬间，记录每一帧闪闪发光的生活。",
         color: "#0099FF",
         image: "img/1.jpg"
     },
     {
-        name: "泡泡玛特",
-        description: "泡泡玛特盲盒，愿你的生活充满可爱与惊喜，生日快乐！",
+        name: "泡泡玛特盲盒",
+        description: "愿你的生活充满惊喜与可爱。",
         color: "#FF6600",
         image: "img/2.jpg"
     },
     {
         name: "幸运红包",
-        description: "现金红包，愿财源广进，好运连连，生日快乐！",
+        description: "愿福气与财运常伴你左右，每一天都收获满满。",
         color: "#CC0000",
         image: "img/4.jpg"
     },
     {
-        name: "护肤品",
-        description: "护肤品套装，愿你每天都能展现最美的自己，生日快乐！",
+        name: "护肤品套装",
+        description: "愿你年年十八，每天都能遇见最美的自己。",
         color: "#7851e0",
         image: "img/3.jpg"
     },
-
     {
         name: "豪华晚餐",
-        description: "与朋友一起享受美食与美好时光！唯有爱与美食，不可辜负，生日快乐！",
+        description: "愿美味串联起欢笑与温情，与亲友共享美好时光。",
         color: "#003399",
         image: "img/5.jpg"
     },
     {
-        name: "加油卡",
-        description: "石化油卡，一路顺风，旅途平安，生日快乐！",
+        name: "石化油卡",
+        description: "愿每一次出发都奔向热爱，沿途皆是风景，归来总有收获。",
         color: "#8bc99a",
         image: "img/6.jpg"
     }
@@ -57,7 +56,7 @@ const giftDescription = document.getElementById('giftDescription');
 let currentRotation = 0;
 // 是否正在旋转
 let isSpinning = false;
-
+let targetIndex = 0;
 // 开始抽奖按钮点击事件
 startDrawBtn.addEventListener('click', () => {
     welcomeScreen.style.display = 'none';
@@ -94,6 +93,12 @@ drawButton.addEventListener('click', () => {
     if (currentRotation == 0) {
         // 我们让指针指向对应礼物的中间位置
         targetAngle = targetAngle + 30;
+    } else {
+        if (targetIndex == 0) {
+            //避免连续抽到相同的礼物
+            targetIndex = targetIndex + 1;
+            targetAngle = targetIndex * 60;
+        }
     }
     // 计算需要旋转的总角度（当前角度 + 多转几圈 + 目标角度）
     const spinAngle = currentRotation + 360 * 2 + targetAngle;
